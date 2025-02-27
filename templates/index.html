@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Agent? - Recomendador de Agentes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>What Agent?</h1>
+        <p>Descubre qué agente de Valorant se adapta mejor a tu estilo de juego utilizando nuestra tecnología de inteligencia artificial.</p>
+    </header>
+
+    <div class="container">
+        <section class="selection">
+            <h2>Selecciona tus preferencias</h2>
+            <form id="recommendation-form" method="post" action="/api/recomendar-agente">
+                <div class="options-grid">
+                    <div class="option">
+                        <label for="map">Mapa</label>
+                        <select id="map" name="map">
+                            <option value="Aleatorio">Aleatorio</option>
+                            <option value="ascent">Ascent</option>
+                            <option value="bind">Bind</option>
+                            <option value="breeze">Breeze</option>
+                            <option value="fracture">Fracture</option>
+                            <option value="haven">Haven</option>
+                            <option value="icebox">Icebox</option>
+                            <option value="split">Split</option>
+                        </select>
+                    </div>
+
+                    <div class="option">
+                        <label for="role">Rol</label>
+                        <select id="role" name="role">
+                            <option value="Aleatorio">Aleatorio</option>
+                            <option value="centinela">Centinela</option>
+                            <option value="controlador">Controlador</option>
+                            <option value="duelista">Duelista</option>
+                            <option value="iniciador">Iniciador</option>
+                        </select>
+                    </div>
+
+                    <div class="option">
+                        <label for="difficulty">Dificultad</label>
+                        <select id="difficulty" name="difficulty">
+                            <option value="Aleatorio">Aleatorio</option>
+                            <option value="facil">Fácil</option>
+                            <option value="media">Media</option>
+                            <option value="dificil">Difícil</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="model-info">
+                    <strong>IA Entrenada:</strong> Nuestro modelo ha sido optimizado para ofrecer las mejores recomendaciones basadas en partidas profesionales.
+                </div>
+
+                <button id="run-model" type="button">Descubrir Agente</button>
+            </form>
+        </section>
+
+        <section class="result hidden">
+            <h2>Tu Agente Recomendado</h2>
+            
+            <div class="agent-info">
+                <!-- Cambia la ruta de la imagen por defecto -->
+                <img id="agent-image" src="{{ url_for('static', path='/images/default.jpg') }}" alt="Imagen del agente">
+                
+                <div class="agent-details">
+                    <div class="agent-name" id="agent-name">Nombre del Agente</div>
+                    <div class="agent-role" id="agent-role">Rol</div>
+                    
+                    <h3>Habilidades</h3>
+                    <ul id="agent-abilities"></ul>
+                    
+                    <div class="recommendations">
+                        <p id="agent-recommendation">Este agente se adapta bien a tu estilo de juego seleccionado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>What Agent? - 2025</p>
+    </footer>
+
+    <script src="{{ url_for('static', path='/script.js') }}"></script>
+</body>
+</html>
