@@ -1,17 +1,17 @@
-# 🎯 What-Agent
+# What-Agent
 
 What-Agent es una aplicación que utiliza Machine Learning para predecir el mejor agente de Valorant según el mapa, rol y dificultad del jugador.  
 
-## ✨ Características
+## Características
 
 - Predicción del mejor agente según el mapa, dificultad y el rol.
 - Implementación de modelos de Machine Learning con **CatBoost**.
 - Interfaz web sencilla para facilitar el uso.
 - Análisis de datos y estadísticas.
 
-## 🚀 Instalación y Uso
+## Instalación y Uso
 
-### 1️⃣ Clona el repositorio
+### Clona el repositorio
 ```bash
 git clone https://github.com/KikiPann/What-Agent.git
 cd What-Agent
@@ -42,8 +42,8 @@ http://127.0.0.1:8000/
 
 🛠 Tecnologías Utilizadas
 
-Python 🐍
-Flask 🌐 (para la interfaz web)
-CatBoost 🤖 (para la predicción)
-SQLite 🗄️ (para el manejo de datos)
-HTML/CSS 🎨 (para la visualización)
+Python 
+Flask (para la interfaz web)
+CatBoost (para la predicción)
+SQLite (para el manejo de datos)
+HTML/CSS (para la visualización)
